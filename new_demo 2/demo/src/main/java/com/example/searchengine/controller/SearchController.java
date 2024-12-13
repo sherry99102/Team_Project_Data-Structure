@@ -1,13 +1,14 @@
 package com.example.searchengine.controller;
 
-import com.example.searchengine.service.GoogleQuery;
+import java.io.IOException;
+import java.util.HashMap;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
-import java.io.IOException;
-import java.util.HashMap;
+import com.example.searchengine.service.GoogleQuery;
 
 @Controller
 public class SearchController {
