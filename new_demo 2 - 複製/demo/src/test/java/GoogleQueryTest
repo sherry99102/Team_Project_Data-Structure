@@ -1,0 +1,32 @@
+package com.example.searchengine;
+
+import com.example.searchengine.service.GoogleQuery;
+import java.util.Map;
+
+public class GoogleQueryTest {
+    public static void main(String[] args) {
+        try {
+            // 測試 GoogleQuery 的抓取功能
+            GoogleQuery googleQuery = new GoogleQuery();
+
+            // 測試查詢關鍵字
+            String query = "NCCU";
+            Map<String, String> results = googleQuery.fetchResults(query);
+
+            // 打印抓取到的結果
+            if (results.isEmpty()) {
+                System.out.println("No results found!");
+            } else {
+                System.out.println("Search results:");
+                results.forEach((title, link) -> {
+                    System.out.println("Title: " + title);
+                    System.out.println("Link: " + link);
+                    System.out.println();
+                });
+            }
+        } catch (Exception e) {
+            System.err.println("Error fetching data: " + e.getMessage());
+            e.printStackTrace();
+        }
+    }
+}
